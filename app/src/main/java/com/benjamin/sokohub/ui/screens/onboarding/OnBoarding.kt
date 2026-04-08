@@ -23,12 +23,15 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.benjamin.sokohub.R
+import com.benjamin.sokohub.navigation.ROUT_HOME
 import com.benjamin.sokohub.ui.screens.home.HomeScreen
 import com.benjamin.sokohub.ui.theme.OLdNavy
 
 @Composable
-fun OnboardingScreen(){
+fun OnboardingScreen(navController: NavController){
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -78,7 +81,7 @@ fun OnboardingScreen(){
             textAlign = TextAlign.Justify
         )
         Button(
-            onClick = {},
+            onClick = {navController.navigate(ROUT_HOME)},
             colors = ButtonDefaults.buttonColors(OLdNavy),
             shape = RoundedCornerShape(10.dp),
             modifier = Modifier.width(350.dp)
@@ -110,7 +113,7 @@ fun OnboardingScreen(){
 @Preview(showBackground = true)
 @Composable
 fun OnboardingScreenPreview(){
-    OnboardingScreen()
+    OnboardingScreen(rememberNavController())
 }
 
 
@@ -161,7 +164,7 @@ fun OnboardingScreenPreview(){
 @Preview(showBackground = true)
 @Composable
 fun OnBoardingPreview(){
-    OnboardingScreen()
+    OnboardingScreen(rememberNavController())
 
 
 

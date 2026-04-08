@@ -40,12 +40,14 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.benjamin.sokohub.R
 import com.benjamin.sokohub.ui.theme.OLdNavy
 
 
 @Composable
-fun RegisterScreen(){
+fun RegisterScreen(navController: NavController){
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -247,5 +249,5 @@ fun RegisterScreen(){
 @Preview(showBackground = true)
 @Composable
 fun RegisterScreenPreview(){
-    RegisterScreen()
+    RegisterScreen(rememberNavController())
 }
