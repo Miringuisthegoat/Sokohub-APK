@@ -131,14 +131,14 @@ fun LoginScreen(navController: NavController){
 
         Spacer(modifier = Modifier.height(10.dp))
 
-        TextButton(onClick ={navController.navigate(ROUT_REGISTER}) {
+        TextButton(onClick ={navController.navigate(ROUT_REGISTER)}) {
             Text(
                 text = "Don't have an Account? Register",
                 fontSize = 15.sp,
             )
         }
 
-        TextButton(onClick ={navController.navigate(ROUT_HOME }) {
+        TextButton(onClick ={navController.navigate(ROUT_HOME)}) {
             Text(
                 text = "Go to Home",
                 fontSize = 15.sp,
