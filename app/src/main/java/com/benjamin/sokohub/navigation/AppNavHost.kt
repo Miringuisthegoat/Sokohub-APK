@@ -7,6 +7,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.benjamin.sokohub.ui.screens.Intent.IntentScreen
 import com.benjamin.sokohub.ui.screens.about.AboutScreen
 import com.benjamin.sokohub.ui.screens.auth.LoginScreen
 import com.benjamin.sokohub.ui.screens.auth.RegisterScreen
@@ -47,6 +48,9 @@ fun AppNavHost(
         }
         composable(ROUT_SERVICE) {
             ServiceScreen(navController)
+        }
+        composable(ROUT_INTENT) {
+            IntentScreen(navController)
         }
 
 

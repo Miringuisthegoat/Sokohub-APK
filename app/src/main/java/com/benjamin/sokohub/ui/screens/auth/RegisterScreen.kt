@@ -21,6 +21,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -42,7 +43,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import androidx.test.espresso.base.Default
 import com.benjamin.sokohub.R
+import com.benjamin.sokohub.navigation.ROUT_LOGIN
+import com.benjamin.sokohub.navigation.ROUT_REGISTER
 import com.benjamin.sokohub.ui.theme.OLdNavy
 
 
@@ -177,11 +181,15 @@ fun RegisterScreen(navController: NavController){
 
         Spacer(modifier = Modifier.height(10.dp))
 
-        Text(
-            text = "Already have an Account? Log-in",
-            fontSize = 15.sp,
+        TextButton(onClick ={navController.navigate(ROUT_LOGIN }) {
+            Text(
+                text = "Already have an Account? Log-in",
+                fontSize = 15.sp,
 
-        )
+                )
+        }
+
+
 
 
 
@@ -242,6 +250,10 @@ fun RegisterScreen(navController: NavController){
 
     }
 
+
+}
+
+class Icons(imageVector: Any, contentDescription: String) {
 
 }
 

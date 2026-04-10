@@ -27,6 +27,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.benjamin.sokohub.R
 import com.benjamin.sokohub.navigation.ROUT_HOME
+import com.benjamin.sokohub.navigation.ROUT_REGISTER
 import com.benjamin.sokohub.ui.screens.home.HomeScreen
 import com.benjamin.sokohub.ui.theme.OLdNavy
 
@@ -81,7 +82,7 @@ fun OnboardingScreen(navController: NavController){
             textAlign = TextAlign.Justify
         )
         Button(
-            onClick = {navController.navigate(ROUT_HOME)},
+            onClick = {navController.navigate(ROUT_REGISTER)},
             colors = ButtonDefaults.buttonColors(OLdNavy),
             shape = RoundedCornerShape(10.dp),
             modifier = Modifier.width(350.dp)

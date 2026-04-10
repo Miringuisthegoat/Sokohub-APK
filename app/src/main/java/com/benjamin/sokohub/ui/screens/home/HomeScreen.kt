@@ -46,6 +46,8 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.benjamin.sokohub.R
+import com.benjamin.sokohub.navigation.ROUT_HOME
+import com.benjamin.sokohub.navigation.ROUT_INTENT
 import com.benjamin.sokohub.ui.theme.OLdNavy
 
 
@@ -138,12 +140,12 @@ fun HomeScreen(navController: NavController){
                     )
 
                     Button(
-                        onClick = {},
+                        onClick = {navController.navigate(ROUT_INTENT },
                         colors = ButtonDefaults.buttonColors(OLdNavy),
                         shape = RoundedCornerShape(10.dp),
                         modifier = Modifier.padding(start = 20.dp)
                     ) {
-                        Text(text = "Shop Now")
+                        Text(text = "Intent")
                     }
 
 
