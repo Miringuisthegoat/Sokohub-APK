@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -29,7 +28,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.paint
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
@@ -37,18 +35,14 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import androidx.test.espresso.base.Default
 import com.benjamin.sokohub.R
 import com.benjamin.sokohub.navigation.ROUT_LOGIN
-import com.benjamin.sokohub.navigation.ROUT_REGISTER
 import com.benjamin.sokohub.ui.theme.OLdNavy
-
 
 @Composable
 fun RegisterScreen(navController: NavController){
@@ -65,8 +59,6 @@ fun RegisterScreen(navController: NavController){
             contentDescription = "img",
             modifier = Modifier
                 .size(200.dp)
-
-
         )
 
         Spacer(modifier = Modifier.height(10.dp))
@@ -75,7 +67,6 @@ fun RegisterScreen(navController: NavController){
             text = "Join us and start your journey today!!",
             fontSize = 18.sp,
             fontWeight = FontWeight.Bold,
-
         )
 
         Spacer(modifier = Modifier.height(10.dp))
@@ -87,7 +78,6 @@ fun RegisterScreen(navController: NavController){
         var confirmpassword by remember { mutableStateOf("") }
 
         //Username
-
         OutlinedTextField(
             value = username,
             onValueChange = {username = it},
@@ -99,15 +89,12 @@ fun RegisterScreen(navController: NavController){
                 unfocusedBorderColor = OLdNavy,
                 focusedBorderColor = Color.Black,
                 unfocusedLeadingIconColor = OLdNavy,
-
             )
-
         )
 
         Spacer(modifier = Modifier.height(10.dp))
 
         //Email
-
         OutlinedTextField(
             value = email,
             onValueChange = {email = it},
@@ -119,15 +106,12 @@ fun RegisterScreen(navController: NavController){
                 unfocusedBorderColor = OLdNavy,
                 focusedBorderColor = Color.Black,
                 unfocusedLeadingIconColor = OLdNavy,
-
-                )
-
+            )
         )
 
         Spacer(modifier = Modifier.height(10.dp))
 
         //Password
-
         OutlinedTextField(
             value = password,
             onValueChange = {password= it},
@@ -139,15 +123,13 @@ fun RegisterScreen(navController: NavController){
                 unfocusedBorderColor = OLdNavy,
                 focusedBorderColor = Color.Black,
                 unfocusedLeadingIconColor = OLdNavy,
-
-                ),
+            ),
             visualTransformation = PasswordVisualTransformation(),
         )
 
         Spacer(modifier = Modifier.height(10.dp))
 
         //Confirm Password
-
         OutlinedTextField(
             value = confirmpassword,
             onValueChange = {confirmpassword = it},
@@ -159,104 +141,31 @@ fun RegisterScreen(navController: NavController){
                 unfocusedBorderColor = OLdNavy,
                 focusedBorderColor = Color.Black,
                 unfocusedLeadingIconColor = OLdNavy,
-
-                ),
+            ),
             visualTransformation = PasswordVisualTransformation(),
-
         )
 
         Spacer(modifier = Modifier.height(10.dp))
 
         //Button
-
         Button(
             onClick = {},
             colors = ButtonDefaults.buttonColors(OLdNavy),
             shape = RoundedCornerShape(10.dp),
-
-
         ) {
             Text(text = "Register")
         }
 
         Spacer(modifier = Modifier.height(10.dp))
 
-        TextButton(onClick ={navController.navigate(ROUT_LOGIN }) {
+        TextButton(onClick ={navController.navigate(ROUT_LOGIN) }) {
             Text(
                 text = "Already have an Account? Log-in",
                 fontSize = 15.sp,
-
-                )
+            )
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
-
-
 }
-
-class Icons(imageVector: Any, contentDescription: String) {
-
-}
-
 
 @Preview(showBackground = true)
 @Composable

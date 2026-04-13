@@ -140,7 +140,7 @@ fun HomeScreen(navController: NavController){
                     )
 
                     Button(
-                        onClick = {navController.navigate(ROUT_INTENT },
+                        onClick = {navController.navigate(ROUT_INTENT) },
                         colors = ButtonDefaults.buttonColors(OLdNavy),
                         shape = RoundedCornerShape(10.dp),
                         modifier = Modifier.padding(start = 20.dp)

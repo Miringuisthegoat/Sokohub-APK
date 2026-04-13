@@ -14,7 +14,9 @@ import com.benjamin.sokohub.ui.screens.auth.RegisterScreen
 import com.benjamin.sokohub.ui.screens.home.HomeScreen
 import com.benjamin.sokohub.ui.screens.onboarding.OnboardingScreen
 import com.benjamin.sokohub.ui.screens.payment.PaymentScreen
+import com.benjamin.sokohub.ui.screens.scaffold.ScaffoldScreen
 import com.benjamin.sokohub.ui.screens.service.ServiceScreen
+import com.benjamin.sokohub.ui.screens.splash.SplashScreen
 
 @Composable
 fun AppNavHost(
@@ -51,6 +53,12 @@ fun AppNavHost(
         }
         composable(ROUT_INTENT) {
             IntentScreen(navController)
+        }
+        composable(ROUT_SPLASH) {
+            SplashScreen(navController)
+        }
+        composable(ROUT_SCAFFOLD) {
+            ScaffoldScreen(navController)
         }
 
 
