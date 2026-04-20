@@ -7,8 +7,6 @@ import com.benjamin.sokohub.models.User
 import com.benjamin.sokohub.navigation.ROUT_HOME
 import com.benjamin.sokohub.navigation.ROUT_ONBOARDING
 import com.benjamin.sokohub.navigation.ROUT_REGISTER
-
-
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 
@@ -45,6 +43,7 @@ class AuthViewModel(var navController: NavController, var context: Context){
 
                         if (result.isSuccessful){
                             Toast.makeText(context, "Registered Successfully", Toast.LENGTH_LONG).show()
+                            navController.navigate(ROUT_HOME)
                         } else {
                             Toast.makeText(context, "${result.exception!!.message}", Toast.LENGTH_LONG).show()
                             navController.navigate(ROUT_REGISTER)
@@ -82,7 +81,7 @@ class AuthViewModel(var navController: NavController, var context: Context){
                         Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
 
                         if (role == "admin") {
-                            navController.navigate(ROUT_ONBOARDING)   // <-- change to your actual route
+                            navController.navigate(ROUT_ONBOARDING)
                         }
 
 
@@ -96,7 +95,7 @@ class AuthViewModel(var navController: NavController, var context: Context){
                     }
 
                 } else {
-                    Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "${task.exception!!.message}", Toast.LENGTH_SHORT).show()
                 }
             }
         }
