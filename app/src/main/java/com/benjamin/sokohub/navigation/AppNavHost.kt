@@ -4,9 +4,11 @@ package com.benjamin.sokohub.navigation
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.benjamin.sokohub.ui.screens.Intent.IntentScreen
 import com.benjamin.sokohub.ui.screens.about.AboutScreen
 import com.benjamin.sokohub.ui.screens.auth.LoginScreen
@@ -14,6 +16,9 @@ import com.benjamin.sokohub.ui.screens.auth.RegisterScreen
 import com.benjamin.sokohub.ui.screens.home.HomeScreen
 import com.benjamin.sokohub.ui.screens.onboarding.OnboardingScreen
 import com.benjamin.sokohub.ui.screens.payment.PaymentScreen
+import com.benjamin.sokohub.ui.screens.products.AddProductScreen
+import com.benjamin.sokohub.ui.screens.products.UpdateProductScreen
+import com.benjamin.sokohub.ui.screens.products.ViewProductScreen
 import com.benjamin.sokohub.ui.screens.scaffold.ScaffoldScreen
 import com.benjamin.sokohub.ui.screens.service.ServiceScreen
 import com.benjamin.sokohub.ui.screens.splash.SplashScreen
@@ -60,7 +65,19 @@ fun AppNavHost(
         composable(ROUT_SCAFFOLD) {
             ScaffoldScreen(navController)
         }
+        composable(ROUTE_ADD_PRODUCT) { AddProductScreen(navController) }
+
+        composable(ROUTE_VIEW_PRODUCTS) { ViewProductScreen(navController) }
+
+        composable(
+            ROUTE_UPDATE_PRODUCT,
+            arguments = listOf(navArgument("productId") { type = NavType.StringType })
+        ) { backStackEntry ->
+            val productId = backStackEntry.arguments?.getString("productId")!!
+            UpdateProductScreen(navController, productId)
 
 
+        }
     }
 }
+
