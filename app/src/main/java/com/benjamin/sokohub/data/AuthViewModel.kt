@@ -4,6 +4,7 @@ import android.content.Context
 import android.widget.Toast
 import androidx.navigation.NavController
 import com.benjamin.sokohub.models.User
+import com.benjamin.sokohub.navigation.ROUTE_ADD_PRODUCT
 import com.benjamin.sokohub.navigation.ROUT_HOME
 import com.benjamin.sokohub.navigation.ROUT_ONBOARDING
 import com.benjamin.sokohub.navigation.ROUT_REGISTER
@@ -81,7 +82,7 @@ class AuthViewModel(var navController: NavController, var context: Context){
                         Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
 
                         if (role == "admin") {
-                            navController.navigate(ROUT_ONBOARDING)
+                            navController.navigate(ROUTE_ADD_PRODUCT)
                         }
 
 
